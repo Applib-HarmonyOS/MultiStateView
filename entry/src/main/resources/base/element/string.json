@@ -1,0 +1,44 @@
+{
+  "string": [
+    {
+      "name": "entry_MainAbility",
+      "value": "entry_MainAbility"
+    },
+    {
+      "name": "mainability_description",
+      "value": "Java_Empty Ability"
+    },
+    {
+      "name": "mainability_HelloWorld",
+      "value": "Hello World"
+    },
+    {
+      "name": "des_empty",
+      "value": "No Results Found"
+    },
+    {
+      "name": "des_fail",
+      "value": "Whoops! Something went wrong"
+    },
+    {
+      "name": "des_unknown_state",
+      "value": "Unknown state"
+    },
+    {
+      "name": "retry",
+      "value": "RETRY"
+    },
+    {
+       "name": "Email",
+       "value": "Email"
+    },
+    {
+      "name": "Password",
+      "value": "Password"
+    },
+    {
+      "name": "Login",
+      "value": "Login"
+    }
+  ]
+}
