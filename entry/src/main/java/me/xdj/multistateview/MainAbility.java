@@ -33,7 +33,7 @@ public class MainAbility extends FractionAbility {
         super.onStart(intent);
         super.setUIContent(ResourceTable.Layout_ability_main);
         mContentFragment = (getFractionManager().getFractionByTag("multistatefragment").isPresent())
-                ? ((MultiStateFragment)getFractionManager().getFractionByTag("multistatefragment").get()) : null;
+                ? ((MultiStateFragment) getFractionManager().getFractionByTag("multistatefragment").get()) : null;
         if (mContentFragment == null) {
             mContentFragment = MultiStateFragment.newInstance();
             ActivityUtils.addFragmentToActivity(getFractionManager(),

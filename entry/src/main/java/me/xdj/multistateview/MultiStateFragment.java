@@ -18,7 +18,10 @@ package me.xdj.multistateview;
 
 import ohos.aafwk.ability.fraction.Fraction;
 import ohos.aafwk.content.Intent;
-import ohos.agp.components.*;
+import ohos.agp.components.Button;
+import ohos.agp.components.Component;
+import ohos.agp.components.ComponentContainer;
+import ohos.agp.components.LayoutScatter;
 import me.xdj.view.MultiStateView;
 
 /**
@@ -33,10 +36,10 @@ public class MultiStateFragment extends Fraction {
                                          Intent savedInstanceState) {
         Component view = inflater.parse(ResourceTable.Layout_fragment_content, container, false);
         mMultiStateView = (MultiStateView) view.findComponentById(ResourceTable.Id_multi_state_view);
-        Button mContentTv = (Button) view.findComponentById(ResourceTable.Id_content_tv);
+        Button mcontentTv = (Button) view.findComponentById(ResourceTable.Id_content_tv);
         mMultiStateView.addViewForStatus(OTHER_STATUS, ResourceTable.Layout_view_other_status);
 
-        mContentTv.setClickedListener(new Component.ClickedListener() {
+        mcontentTv.setClickedListener(new Component.ClickedListener() {
             @Override
             public void onClick(Component component) {
                 mMultiStateView.setViewState(MultiStateView.STATE_LOADING);
