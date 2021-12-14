@@ -10,7 +10,7 @@ Inspired by [XuDaojie/MultiStateView](https://github.com/XuDaojie/MultiStateView
 
 This library provides different switching states of View. Included by default are Content, Empty, Fail, Loading states.
 
-<img src="screenshots/ezgif.com-gif-maker (2).gif" width="500">
+<img src="screenshots/ezgif.com-gif-maker (4).gif" width="500">
 
 ## Dependency
 1. For using multistateview module in sample app, include the source code and add the below dependencies in entry/build.gradle to generate hap/support.har.
