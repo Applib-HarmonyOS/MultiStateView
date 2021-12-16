@@ -47,6 +47,10 @@ public class Log {
         return HiLog.debug(LABEL_LOG, LOG_FORMAT, tag, msg);
     }
 
+    public static int debug(String tag, String msg, Throwable th) {
+        return HiLog.debug(LABEL_LOG, LOG_FORMAT, tag, msg, th);
+    }
+
     /**
      * Print info log.
      *
@@ -67,6 +71,15 @@ public class Log {
         return HiLog.warn(LABEL_LOG, LOG_FORMAT, tag, msg);
     }
 
+    public static int warn(String tag, String msg, Throwable tr) {
+        return HiLog.warn(LABEL_LOG, LOG_FORMAT, tag, msg, tr);
+    }
+
+    public static int warn(String tag, Throwable tr) {
+        return HiLog.warn(LABEL_LOG, LOG_FORMAT, tag, tr);
+    }
+
+
     /**
      * Print error log.
      *
@@ -80,19 +93,6 @@ public class Log {
     public static int error(String tag, String msg, Throwable tr) {
         return HiLog.error(LABEL_LOG, LOG_FORMAT, tag, msg, tr);
     }
-
-    public static int warn(String tag, String msg, Throwable tr) {
-        return HiLog.warn(LABEL_LOG, LOG_FORMAT, tag, msg, tr);
-    }
-
-    public static int warn(String tag, Throwable tr) {
-        return HiLog.warn(LABEL_LOG, LOG_FORMAT, tag, tr);
-    }
-
-    public static int debug(String tag, String msg, Throwable th) {
-        return HiLog.debug(LABEL_LOG, LOG_FORMAT, tag, msg, th);
-    }
-
 
     public static String getStackTraceString(Throwable tr) {
         return HiLog.getStackTrace(tr);

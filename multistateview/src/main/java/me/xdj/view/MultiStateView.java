@@ -10,6 +10,7 @@ import ohos.eventhandler.EventHandler;
 import ohos.eventhandler.EventRunner;
 import ohos.utils.PlainArray;
 import ohos.utils.PlainIntArray;
+import java.util.logging.Logger;
 
 /**
  * Created by xdj on 16/2/3.
@@ -147,7 +148,7 @@ public class MultiStateView extends StackLayout {
     public Component getCurrentView() {
         Component view = getView(mCurrentState);
         if (view == null && mCurrentState == STATE_CONTENT) {
-            System.out.println("Content is null");
+            Logger.getLogger("Content is null");
         } else if (view == null) {
             throw new NullPointerException("current state view is null =" + mCurrentState);
         }
