@@ -14,14 +14,14 @@ ohos {
             }
         }
     }
-
+    
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.har'])
-    implementation project(path: ':multistateview')
     testImplementation 'junit:junit:4.13'
     ohosTestImplementation 'com.huawei.ohos.testkit:runner:1.0.0.100'
+    implementation project (':multistateview')
 }
 decc {
     supportType = ['html','xml']

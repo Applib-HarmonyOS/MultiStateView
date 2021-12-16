@@ -8,9 +8,9 @@ Inspired by [XuDaojie/MultiStateView](https://github.com/XuDaojie/MultiStateView
 
 ## Feature
 
-This library provides different switching states of View. Included by default are Content, Empty, Fail, Loading states.
+This library provides different switching states of View, included by default are Content, Empty, Fail, Loading states.
 
-<img src="screenshots/ezgif.com-gif-maker (4).gif" width="500">
+<img src="screenshots/ezgif.com-gif-maker(4).gif" width="500">
 
 ## Dependency
 1. For using multistateview module in sample app, include the source code and add the below dependencies in entry/build.gradle to generate hap/support.har.
@@ -57,11 +57,11 @@ This library provides different switching states of View. Included by default ar
 
 ### Include following code in your activity
 ``` java 
-public void setViewState(int state) // Set the view state 
-public int getViewState()           // Get the current state 
-public View getView(int state)      // Get the view of the specified state 
-public void addViewForStatus(int status, int resLayoutID) // Increase the state 
-public void setOnInflaterListener(OnInflateListener onInflateListener) // Triggered when each state is Layout inflate (except CONTENT)
+public void setViewState(int state); // Set the view state 
+public int getViewState();           // Get the current state 
+public View getView(int state);      // Get the view of the specified state 
+public void addViewForStatus(int status, int resLayoutID); // Increase the state 
+public void setOnInflaterListener(OnInflateListener onInflateListener); // Triggered when each state is Layout inflate (except CONTENT)
 ```
 
 ## License

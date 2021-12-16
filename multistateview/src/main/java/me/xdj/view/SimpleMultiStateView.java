@@ -3,6 +3,7 @@ package me.xdj.view;
 import ohos.agp.components.AttrSet;
 import ohos.agp.components.Component;
 import ohos.app.Context;
+import com.hmos.compat.utils.AttrUtils;
 
 /**
  * Created by xdj on 16/2/3.
@@ -12,7 +13,7 @@ public class SimpleMultiStateView extends MultiStateView implements Component.Bi
 
     private static final int MIN_SHOW_TIME = 600;
     private static final int MIN_DELAY = 600;
-    Integer emptyId;
+    Integer resIdEmpty;
     Integer resIdLoading;
     Integer resIdFail;
     private int mTargetState = -1;
@@ -41,23 +42,12 @@ public class SimpleMultiStateView extends MultiStateView implements Component.Bi
      */
     public SimpleMultiStateView(Context context, AttrSet attrs, String defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        resIdEmpty = AttrUtils.utils(attrs);
+        resIdLoading = AttrUtils.utils1(attrs);
+        resIdFail = AttrUtils.utils2(attrs);
 
-        String emptyViewString = attrs.getAttr("msv_emptyView").get().getStringValue();
-        if (emptyViewString.contains(":")) {
-            emptyId = Integer.valueOf(emptyViewString.split(":")[1]);
-        }
-        String emptyViewString1 = attrs.getAttr("msv_loadingView").get().getStringValue();
-        if (emptyViewString1.contains(":")) {
-            resIdLoading = Integer.valueOf(emptyViewString1.split(":")[1]);
-        }
-
-        String emptyViewString2 = attrs.getAttr("msv_failView").get().getStringValue();
-        if (emptyViewString2.contains(":")) {
-            resIdFail = Integer.valueOf(emptyViewString2.split(":")[1]);
-        }
-
-        if (emptyId != -1) {
-            addViewForStatus(MultiStateView.STATE_EMPTY, emptyId);
+        if (resIdEmpty != -1) {
+            addViewForStatus(MultiStateView.STATE_EMPTY, resIdEmpty);
         }
         if (resIdFail != -1) {
             addViewForStatus(MultiStateView.STATE_FAIL, resIdFail);

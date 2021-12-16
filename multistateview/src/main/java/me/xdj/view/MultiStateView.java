@@ -1,6 +1,10 @@
 package me.xdj.view;
 
-import ohos.agp.components.*;
+import ohos.agp.components.AttrSet;
+import ohos.agp.components.Component;
+import ohos.agp.components.ComponentContainer;
+import ohos.agp.components.LayoutScatter;
+import ohos.agp.components.StackLayout;
 import ohos.app.Context;
 import ohos.eventhandler.EventHandler;
 import ohos.eventhandler.EventRunner;
@@ -142,8 +146,10 @@ public class MultiStateView extends StackLayout {
      */
     public Component getCurrentView() {
         Component view = getView(mCurrentState);
-        if (view == null && mCurrentState != STATE_CONTENT) {
-            throw new NullPointerException("current state view is null, state = " + mCurrentState);
+        if (view == null && mCurrentState == STATE_CONTENT) {
+            System.out.println("Content is null");
+        } else if (view == null) {
+            throw new NullPointerException("current state view is null =" + mCurrentState);
         }
         return getView(mCurrentState);
     }

@@ -28,8 +28,11 @@ import ohos.hiviewdfx.HiLogLabel;
  * @since 2021-24-06.
  */
 public class AttrUtils {
-    private static final HiLogLabel HI_LOG_LABEL =new HiLogLabel(0,0,"MultistateView");
+    private static final HiLogLabel HI_LOG_LABEL = new HiLogLabel(0, 0, "MultistateView");
     private static final String TAG = "context";
+    private static Integer resIdEmpty;
+    private static Integer resIdLoading;
+    private static Integer resIdFail;
 
     private AttrUtils() {
         throw new IllegalStateException("Utils class");
@@ -50,7 +53,7 @@ public class AttrUtils {
                 value = attrs.getAttr(name).get().getIntegerValue();
             }
         } catch (Exception e) {
-            HiLog.error(HI_LOG_LABEL, TAG,e);
+            HiLog.error(HI_LOG_LABEL, TAG, e);
         }
         return value;
     }
@@ -70,7 +73,7 @@ public class AttrUtils {
                 value = attrs.getAttr(name).get().getFloatValue();
             }
         } catch (Exception e) {
-            HiLog.error(HI_LOG_LABEL, TAG,e);
+            HiLog.error(HI_LOG_LABEL, TAG, e);
         }
         return value;
     }
@@ -90,7 +93,7 @@ public class AttrUtils {
                 value = attrs.getAttr(name).get().getBoolValue();
             }
         } catch (Exception e) {
-            HiLog.error(HI_LOG_LABEL, TAG,e);
+            HiLog.error(HI_LOG_LABEL, TAG, e);
         }
         return value;
     }
@@ -110,7 +113,7 @@ public class AttrUtils {
                 value = attrs.getAttr(name).get().getLongValue();
             }
         } catch (Exception e) {
-            HiLog.error(HI_LOG_LABEL, TAG,e);
+            HiLog.error(HI_LOG_LABEL, TAG, e);
         }
         return value;
     }
@@ -130,7 +133,7 @@ public class AttrUtils {
                 value = attrs.getAttr(name).get().getColorValue().getValue();
             }
         } catch (Exception e) {
-            HiLog.error(HI_LOG_LABEL, TAG,e);
+            HiLog.error(HI_LOG_LABEL, TAG, e);
         }
         return value;
     }
@@ -150,7 +153,7 @@ public class AttrUtils {
                 value = attrs.getAttr(name).get().getDimensionValue();
             }
         } catch (Exception e) {
-            HiLog.error(HI_LOG_LABEL, TAG,e);
+            HiLog.error(HI_LOG_LABEL, TAG, e);
         }
         return value;
     }
@@ -170,7 +173,7 @@ public class AttrUtils {
                 value = attrs.getAttr(name).get().getDimensionValue();
             }
         } catch (Exception e) {
-            HiLog.error(HI_LOG_LABEL, TAG,e);
+            HiLog.error(HI_LOG_LABEL, TAG, e);
         }
         return (int) value;
     }
@@ -190,7 +193,7 @@ public class AttrUtils {
                 value = attrs.getAttr(name).get().getStringValue();
             }
         } catch (Exception e) {
-            HiLog.error(HI_LOG_LABEL, TAG,e);
+            HiLog.error(HI_LOG_LABEL, TAG, e);
         }
         return value;
     }
@@ -209,7 +212,7 @@ public class AttrUtils {
                 value = attrs.getAttr(name).get().getStringValue();
             }
         } catch (Exception e) {
-            HiLog.error(HI_LOG_LABEL, TAG,e);
+            HiLog.error(HI_LOG_LABEL, TAG, e);
         }
         return value;
     }
@@ -228,8 +231,50 @@ public class AttrUtils {
                 value = attrs.getAttr(name).get().getElement();
             }
         } catch (Exception e) {
-            HiLog.error(HI_LOG_LABEL, TAG,e);
+            HiLog.error(HI_LOG_LABEL, TAG, e);
         }
         return value;
+    }
+
+    /**
+     * Utils.
+     *
+     * @param attrs attrs.
+     * @return resIdEmpty.
+     */
+    public static Integer utils(AttrSet attrs) {
+        String emptyViewString = attrs.getAttr("msv_emptyView").get().getStringValue();
+        if (emptyViewString.contains(":")) {
+            resIdEmpty = Integer.valueOf(emptyViewString.split(":")[1]);
+        }
+        return resIdEmpty;
+    }
+
+    /**
+     * Utils1.
+     *
+     * @param attrs attrs.
+     * @return resIdLoading.
+     */
+    public static Integer utils1(AttrSet attrs) {
+        String emptyViewString1 = attrs.getAttr("msv_loadingView").get().getStringValue();
+        if (emptyViewString1.contains(":")) {
+            resIdLoading = Integer.valueOf(emptyViewString1.split(":")[1]);
+        }
+        return resIdLoading;
+    }
+
+    /**
+     * utils2.
+     *
+     * @param attrs attrs.
+     * @return resIdFail.
+     */
+    public static Integer utils2(AttrSet attrs) {
+        String emptyViewString2 = attrs.getAttr("msv_failView").get().getStringValue();
+        if (emptyViewString2.contains(":")) {
+            resIdFail = Integer.valueOf(emptyViewString2.split(":")[1]);
+        }
+        return resIdFail;
     }
 }
