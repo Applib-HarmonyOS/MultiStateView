@@ -26,25 +26,25 @@ import ohos.agp.window.dialog.ToastDialog;
  * MainAbility.
  */
 public class MainAbility extends FractionAbility {
-    MultiStateFragment mContentFragment;
+    MultiStateFraction mContentFraction;
 
     @Override
     public void onStart(Intent intent) {
         super.onStart(intent);
         super.setUIContent(ResourceTable.Layout_ability_main);
-        mContentFragment = (getFractionManager().getFractionByTag("multistatefragment").isPresent())
-                ? ((MultiStateFragment) getFractionManager().getFractionByTag("multistatefragment").get()) : null;
-        if (mContentFragment == null) {
-            mContentFragment = MultiStateFragment.newInstance();
-            ActivityUtils.addFragmentToActivity(getFractionManager(),
-                    mContentFragment, ResourceTable.Id_content_frame);
+        mContentFraction = (getFractionManager().getFractionByTag("multistatefraction").isPresent())
+                ? ((MultiStateFraction) getFractionManager().getFractionByTag("multistatefraction").get()) : null;
+        if (mContentFraction == null) {
+            mContentFraction = MultiStateFraction.newInstance();
+            ActivityUtils.addFractionToActivity(getFractionManager(),
+                    mContentFraction, ResourceTable.Id_content_frame);
         }
         Button fab = (Button) findComponentById(ResourceTable.Id_fab);
         fab.setClickedListener(new Component.ClickedListener() {
             @Override
             public void onClick(Component component) {
                 new ToastDialog(getContext()).setText("Replace with your own action").setDuration(1000).show();
-                mContentFragment.refresh();
+                mContentFraction.refresh();
             }
         });
     }

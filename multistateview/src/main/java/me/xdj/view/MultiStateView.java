@@ -161,10 +161,21 @@ public class MultiStateView extends StackLayout {
         return getView(mCurrentState);
     }
 
+    /**
+     * addVewForStatus.
+     *
+     * @param status status.
+     * @param resLayoutId resid.
+     */
     public void addViewForStatus(int status, int resLayoutId) {
         mLayoutIdArray.put(status, resLayoutId);
     }
 
+    /**
+     * OnInflateListener.
+     *
+     * @param onInflateListener onInflate.
+     */
     public void setOnInflateListener(OnInflateListener onInflateListener) {
         mOnInflateListener = onInflateListener;
     }

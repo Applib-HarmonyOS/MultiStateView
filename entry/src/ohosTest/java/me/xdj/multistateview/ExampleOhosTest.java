@@ -38,9 +38,8 @@ public class ExampleOhosTest {
     @Test
     public void testStateView()
     {
-        int state=10001;
         MultiStateView multiStateView=new MultiStateView(context);
-        multiStateView.setViewState(state);
+        multiStateView.setViewState(10001);
         assertEquals(10001,multiStateView.getViewState());
     }
 }

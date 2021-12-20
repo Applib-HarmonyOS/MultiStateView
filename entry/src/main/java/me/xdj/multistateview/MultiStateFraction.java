@@ -11,14 +11,14 @@ import me.xdj.view.MultiStateView;
 /**
  * Created by xdj on 16/2/5.
  */
-public class MultiStateFragment extends Fraction {
+public class MultiStateFraction extends Fraction {
     public static final int OTHER_STATUS = 1111;
     private MultiStateView mMultiStateView;
 
     @Override
     public Component onComponentAttached(LayoutScatter inflater, ComponentContainer container,
                                          Intent savedInstanceState) {
-        Component view = inflater.parse(ResourceTable.Layout_fragment_content, container, false);
+        Component view = inflater.parse(ResourceTable.Layout_fraction_content, container, false);
         mMultiStateView = (MultiStateView) view.findComponentById(ResourceTable.Id_multi_state_view);
         Button mcontentTv = (Button) view.findComponentById(ResourceTable.Id_content_tv);
         mMultiStateView.addViewForStatus(OTHER_STATUS, ResourceTable.Layout_view_other_status);
@@ -68,8 +68,8 @@ public class MultiStateFragment extends Fraction {
         return view;
     }
 
-    public static MultiStateFragment newInstance() {
-        return new MultiStateFragment();
+    public static MultiStateFraction newInstance() {
+        return new MultiStateFraction();
     }
 
     /**

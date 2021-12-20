@@ -17,12 +17,12 @@ public class ActivityUtils {
      * AddFragementMethod.
      *
      * @param fm FractionManager.
-     * @param fragment Fragment.
+     * @param fraction Fraction.
      * @param contentId ContentId.
      */
-    public static void addFragmentToActivity(FractionManager fm, Fraction fragment, int contentId) {
+    public static void addFractionToActivity(FractionManager fm, Fraction fraction, int contentId) {
         FractionScheduler ft = fm.startFractionScheduler();
-        ft.add(contentId, fragment);
+        ft.add(contentId, fraction);
         ft.submit();
     }
 }

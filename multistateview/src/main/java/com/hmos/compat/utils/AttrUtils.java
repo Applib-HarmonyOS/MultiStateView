@@ -23,9 +23,6 @@ import ohos.hiviewdfx.HiLogLabel;
 
 /**
  * Utils for Attributes.
- *
- * @author a00237416.
- * @since 2021-24-06.
  */
 public class AttrUtils {
     private static final HiLogLabel HI_LOG_LABEL = new HiLogLabel(0, 0, "MultistateView");
