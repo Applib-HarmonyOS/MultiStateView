@@ -6,7 +6,6 @@
     ohos:background_element="#FFE94EFA"
     ohos:orientation="vertical">
 
-
 <RoundProgressBar
     ohos:width="100vp"
     ohos:height="100vp"

@@ -44,10 +44,4 @@ public class ExampleOhosTest {
         multiStateView.setViewState(state);
         assertEquals(10001,multiStateView.getViewState());
     }
-    @Test
-    public void testCurrentView()
-    {
-        multiStateView=new MultiStateView(context);
-        assertNull(multiStateView.getCurrentView());
-    }
 }

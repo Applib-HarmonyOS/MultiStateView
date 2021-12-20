@@ -8,9 +8,10 @@ import ohos.agp.components.StackLayout;
 import ohos.app.Context;
 import ohos.eventhandler.EventHandler;
 import ohos.eventhandler.EventRunner;
+import ohos.hiviewdfx.HiLog;
+import ohos.hiviewdfx.HiLogLabel;
 import ohos.utils.PlainArray;
 import ohos.utils.PlainIntArray;
-import java.util.logging.Logger;
 
 /**
  * Created by xdj on 16/2/3.
@@ -18,6 +19,7 @@ import java.util.logging.Logger;
  */
 public class MultiStateView extends StackLayout {
 
+    private static final HiLogLabel HI_LOG_LABEL = new HiLogLabel(0, 0, "MultistateView");
     public static final int STATE_CONTENT = 10001;
     public static final int STATE_LOADING = 10002;
     public static final int STATE_EMPTY = 10003;
@@ -98,23 +100,27 @@ public class MultiStateView extends StackLayout {
      * @param state State type.
      */
     public void setViewState(int state) {
-        if (state != mCurrentState) {
-            Component view = getView(state);
-            getCurrentView().setVisibility(HIDE);
-            mCurrentState = state;
-            if (view != null) {
-                view.setVisibility(VISIBLE);
-            } else {
-                int resLayoutId = mLayoutIdArray.get(state).get();
-                view = LayoutScatter.getInstance(getContext()).parse(resLayoutId, this, false);
-                mStateViewArray.put(state, view);
-                addComponent(view);
-                view.setVisibility(VISIBLE);
+        try {
+            if (state != mCurrentState) {
+                Component view = getView(state);
+                getCurrentView().setVisibility(HIDE);
+                mCurrentState = state;
+                if (view != null) {
+                    view.setVisibility(VISIBLE);
+                } else {
+                    int resLayoutId = mLayoutIdArray.get(state).get();
+                    view = LayoutScatter.getInstance(getContext()).parse(resLayoutId, this, false);
+                    mStateViewArray.put(state, view);
+                    addComponent(view);
+                    view.setVisibility(VISIBLE);
 
-                if (mOnInflateListener != null) {
-                    mOnInflateListener.onInflate(state, view);
+                    if (mOnInflateListener != null) {
+                        mOnInflateListener.onInflate(state, view);
+                    }
                 }
             }
+        } catch (Exception e) {
+            HiLog.error(HI_LOG_LABEL,"exception in setViewState");
         }
     }
 
@@ -148,7 +154,7 @@ public class MultiStateView extends StackLayout {
     public Component getCurrentView() {
         Component view = getView(mCurrentState);
         if (view == null && mCurrentState == STATE_CONTENT) {
-            Logger.getLogger("Content is null");
+            throw new NullPointerException("Content is null");
         } else if (view == null) {
             throw new NullPointerException("current state view is null =" + mCurrentState);
         }

@@ -10,11 +10,13 @@
   "deviceConfig": {
   },
   "module": {
-    "package": "me.xdj.view",
+    "package": "me.xdj.multistateview",
     "deviceType": [
       "phone",
       "tablet",
-      "tv"
+      "tv",
+      "wearable",
+      "car"
     ],
     "distro": {
       "deliveryWithInstall": true,

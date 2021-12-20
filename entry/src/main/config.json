@@ -15,7 +15,9 @@
     "deviceType": [
       "phone",
       "tablet",
-      "tv"
+      "tv",
+      "wearable",
+      "car"
     ],
     "distro": {
       "deliveryWithInstall": true,
@@ -36,6 +38,7 @@
           }
         ],
         "orientation": "unspecified",
+        "visible": true,
         "name": "me.xdj.multistateview.MainAbility",
         "icon": "$media:icon",
         "description": "$string:mainability_description",

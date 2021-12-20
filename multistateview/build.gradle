@@ -1,5 +1,5 @@
 apply plugin: 'com.huawei.ohos.library'
-//For instructions on signature configuration, see https://developer.harmonyos.com/en/docs/documentation/doc-guides/ide_debug_device-0000001053822404#EN-US_TOPIC_0000001154985555__section1112183053510
+//For instructions on signature configuration, see https://developer.harmonyos.com/en/docs/documentation/doc-guides/ide_debug_device-0000001053822404#section1112183053510
 ohos {
     compileSdkVersion 6
     defaultConfig {
@@ -13,10 +13,9 @@ ohos {
             }
         }
     }
-    
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    testImplementation 'junit:junit:4.13'
+    testImplementation 'junit:junit:4.13.1'
 }

@@ -13,9 +13,6 @@ public class SimpleMultiStateView extends MultiStateView implements Component.Bi
 
     private static final int MIN_SHOW_TIME = 600;
     private static final int MIN_DELAY = 600;
-    Integer resIdEmpty;
-    Integer resIdLoading;
-    Integer resIdFail;
     private int mTargetState = -1;
     private long mLoadingStartTime = -1;
 
@@ -41,10 +38,11 @@ public class SimpleMultiStateView extends MultiStateView implements Component.Bi
      * @param defStyleAttr defStyle.
      */
     public SimpleMultiStateView(Context context, AttrSet attrs, String defStyleAttr) {
+
         super(context, attrs, defStyleAttr);
-        resIdEmpty = AttrUtils.utils(attrs);
-        resIdLoading = AttrUtils.utils1(attrs);
-        resIdFail = AttrUtils.utils2(attrs);
+        int resIdEmpty = AttrUtils.getLayoutIdStringFromAttr(attrs, "msv_emptyView");
+        int resIdLoading = AttrUtils.getLayoutIdStringFromAttr(attrs, "msv_loadingView");
+        int resIdFail = AttrUtils.getLayoutIdStringFromAttr(attrs, "msv_failView");
 
         if (resIdEmpty != -1) {
             addViewForStatus(MultiStateView.STATE_EMPTY, resIdEmpty);

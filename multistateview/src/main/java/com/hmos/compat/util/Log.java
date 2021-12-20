@@ -27,11 +27,8 @@ import ohos.hiviewdfx.HiLogLabel;
 public class Log {
 
     private static final String TAG_LOG = "HMOSCompat";
-
     private static final int DOMAIN_ID = 0xD000F00;
-
     private static final HiLogLabel LABEL_LOG = new HiLogLabel(3, DOMAIN_ID, Log.TAG_LOG);
-
     private static final String LOG_FORMAT = "%{public}s: %{public}s";
 
     private Log() {

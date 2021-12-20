@@ -30,9 +30,6 @@ import ohos.hiviewdfx.HiLogLabel;
 public class AttrUtils {
     private static final HiLogLabel HI_LOG_LABEL = new HiLogLabel(0, 0, "MultistateView");
     private static final String TAG = "context";
-    private static Integer resIdEmpty;
-    private static Integer resIdLoading;
-    private static Integer resIdFail;
 
     private AttrUtils() {
         throw new IllegalStateException("Utils class");
@@ -237,44 +234,24 @@ public class AttrUtils {
     }
 
     /**
-     * Utils.
+     * getLayoutIdStringFromAttr.
      *
      * @param attrs attrs.
+     * @param attrName attrName.
      * @return resIdEmpty.
      */
-    public static Integer utils(AttrSet attrs) {
-        String emptyViewString = attrs.getAttr("msv_emptyView").get().getStringValue();
-        if (emptyViewString.contains(":")) {
-            resIdEmpty = Integer.valueOf(emptyViewString.split(":")[1]);
+    public static int getLayoutIdStringFromAttr(AttrSet attrs, String attrName) {
+        int resIdEmpty = 0;
+        try {
+            if (attrs.getAttr(attrName).isPresent() && attrs.getAttr(attrName).get() != null) {
+                String emptyViewString = attrs.getAttr(attrName).get().getStringValue();
+                if (emptyViewString.contains(":")) {
+                    resIdEmpty = Integer.parseInt(emptyViewString.split(":")[1]);
+                }
+            }
+        } catch (Exception e) {
+            HiLog.error(HI_LOG_LABEL, TAG, e);
         }
         return resIdEmpty;
-    }
-
-    /**
-     * Utils1.
-     *
-     * @param attrs attrs.
-     * @return resIdLoading.
-     */
-    public static Integer utils1(AttrSet attrs) {
-        String emptyViewString1 = attrs.getAttr("msv_loadingView").get().getStringValue();
-        if (emptyViewString1.contains(":")) {
-            resIdLoading = Integer.valueOf(emptyViewString1.split(":")[1]);
-        }
-        return resIdLoading;
-    }
-
-    /**
-     * utils2.
-     *
-     * @param attrs attrs.
-     * @return resIdFail.
-     */
-    public static Integer utils2(AttrSet attrs) {
-        String emptyViewString2 = attrs.getAttr("msv_failView").get().getStringValue();
-        if (emptyViewString2.contains(":")) {
-            resIdFail = Integer.valueOf(emptyViewString2.split(":")[1]);
-        }
-        return resIdFail;
     }
 }
