@@ -120,7 +120,7 @@ public class MultiStateView extends StackLayout {
                 }
             }
         } catch (Exception e) {
-            HiLog.error(HI_LOG_LABEL,"exception in setViewState");
+            HiLog.error(HI_LOG_LABEL, "exception in setViewState");
         }
     }
 

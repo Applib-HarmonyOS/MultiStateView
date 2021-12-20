@@ -26,7 +26,6 @@ import static org.junit.Assert.*;
 
 public class ExampleOhosTest {
     private Context context;
-    private MultiStateView multiStateView;
     @Test
     public void testBundleName() {
         final String actualBundleName = AbilityDelegatorRegistry.getArguments().getTestBundleName();
@@ -40,7 +39,7 @@ public class ExampleOhosTest {
     public void testStateView()
     {
         int state=10001;
-        multiStateView=new MultiStateView(context);
+        MultiStateView multiStateView=new MultiStateView(context);
         multiStateView.setViewState(state);
         assertEquals(10001,multiStateView.getViewState());
     }
