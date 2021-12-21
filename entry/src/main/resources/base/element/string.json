@@ -1,0 +1,44 @@
+{
+  "string": [
+    {
+      "name": "entry_MainAbility",
+      "value": "MultiStateView"
+    },
+    {
+      "name": "mainability_description",
+      "value": "Multistateview Ability"
+    },
+    {
+      "name": "mainability_MultiStateView",
+      "value": "MultiStateView"
+    },
+    {
+      "name": "des_empty",
+      "value": "No Results Found"
+    },
+    {
+      "name": "des_fail",
+      "value": "Whoops! Something went wrong"
+    },
+    {
+      "name": "des_unknown_state",
+      "value": "Unknown state"
+    },
+    {
+      "name": "retry",
+      "value": "RETRY"
+    },
+    {
+       "name": "Email",
+       "value": "Email"
+    },
+    {
+      "name": "Password",
+      "value": "Password"
+    },
+    {
+      "name": "Login",
+      "value": "Login"
+    }
+  ]
+}

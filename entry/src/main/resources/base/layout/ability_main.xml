@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StackLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:alignment="center"
+    ohos:orientation="vertical">
+
+    <DependentLayout
+        ohos:id="$+id:content_frame"
+        ohos:width="match_parent"
+        ohos:height="match_parent"/>
+
+    <Button
+        ohos:id="$+id:fab"
+        ohos:width="100vp"
+        ohos:height="100vp"
+        ohos:bottom_margin="50vp"
+        ohos:right_margin="50vp"
+        ohos:layout_alignment="bottom|end"
+        ohos:background_element="$media:fab" />
+
+</StackLayout>

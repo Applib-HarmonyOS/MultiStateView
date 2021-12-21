@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<me.xdj.view.SimpleMultiStateView
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    xmlns:app="http://schemas.huawei.com/apk/res-auto"
+    ohos:id="$+id:multi_state_view"
+    ohos:width="match_parent"
+    ohos:height="match_parent"
+    ohos:alignment="center"
+    ohos:text_size="50vp"
+    app:msv_emptyView="$layout:msv_view_state_empty"
+    app:msv_failView="$layout:msv_view_state_fail"
+    app:msv_loadingView="$layout:msv_view_state_loading">
+    <DirectionalLayout
+        ohos:height="match_parent"
+        ohos:width="match_parent"
+        ohos:alignment="vertical_center"
+        ohos:orientation="vertical">
+
+    <TextField
+        ohos:id="$+id:content_email"
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:text_alignment="center"
+        ohos:text_size="50vp"
+        ohos:left_margin="20fp"
+        ohos:right_margin="100fp"
+        ohos:background_element="#FFDED8D8"
+        ohos:hint="$string:Email"/>
+    <TextField
+        ohos:id="$+id:content_pwd"
+        ohos:width="match_parent"
+        ohos:height="match_content"
+        ohos:text_alignment="center"
+        ohos:text_size="50vp"
+        ohos:top_margin="20fp"
+        ohos:left_margin="20fp"
+        ohos:right_margin="100fp"
+        ohos:background_element="#FFDED8D8"
+        ohos:text_input_type="pattern_password"
+        ohos:hint="$string:Password" />
+    <Button
+        ohos:height="match_content"
+        ohos:width="match_content"
+        ohos:text_alignment="center"
+        ohos:id="$+id:content_tv"
+        ohos:top_margin="20fp"
+        ohos:left_margin="20fp"
+        ohos:background_element="#FF2F2E2E"
+        ohos:text_size="50vp"
+        ohos:text_color="#FFFFFF"
+        ohos:text="$string:Login"/>
+    </DirectionalLayout>
+</me.xdj.view.SimpleMultiStateView>

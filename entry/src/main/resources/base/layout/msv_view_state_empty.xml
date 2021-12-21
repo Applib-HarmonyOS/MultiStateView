@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DirectionalLayout
+    xmlns:ohos="http://schemas.huawei.com/res/ohos"
+    ohos:height="match_parent"
+    ohos:width="match_parent"
+    ohos:alignment="center"
+    ohos:background_element="#00FF00"
+    ohos:orientation="vertical">
+
+    <Text
+        ohos:width="match_content"
+        ohos:height="match_content"
+        ohos:text_size="50vp"
+        ohos:text="$string:des_empty"/>
+
+    <Button
+        ohos:id="$+id:retry"
+        ohos:width="match_content"
+        ohos:height="match_content"
+        ohos:text_size="50vp"
+        ohos:text="$string:retry"
+        ohos:background_element="#FFC4C0C0"
+        ohos:top_margin="40vp"
+        ohos:text_color="#FFA91A3D"/>
+
+</DirectionalLayout>

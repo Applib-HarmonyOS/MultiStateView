@@ -1,0 +1,27 @@
+{
+  "app": {
+    "bundleName": "me.xdj.multistateview",
+    "vendor": "xdj",
+    "version": {
+      "code": 1000000,
+      "name": "1.0.0"
+    }
+  },
+  "deviceConfig": {
+  },
+  "module": {
+    "package": "me.xdj.multistateview",
+    "deviceType": [
+      "phone",
+      "tablet",
+      "tv",
+      "wearable",
+      "car"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "multistateview",
+      "moduleType": "har"
+    }
+  }
+}
