@@ -30,6 +30,13 @@ This library provides different switching states of View, included by default ar
 		testImplementation 'junit:junit:4.13'
 	}
 ```
+3. For using multistateview from a remote repository in separate application, add the below dependencies in entry/build.gradle file.
+``` groovy
+    dependencies {
+    implementation ('dev.applibgroup:multistateview:1.0.0')
+    testCompile 'junit:junit:4.13'
+}
+```
 
 ## Usage
 ### Include following code in your layout
