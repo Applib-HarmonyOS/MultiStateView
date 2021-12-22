@@ -1,3 +1,5 @@
+[![.github/workflows/main.yml](https://github.com/applibgroup/MultiStateView/actions/workflows/main.yml/badge.svg)](https://github.com/applibgroup/MultiStateView/actions/workflows/main.yml)  [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=applibgroup_MultiStateView&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=applibgroup_MultiStateView)
+
 # MultiStateView
 
 A HMOS library which provide MultiStateView feature.
@@ -29,6 +31,13 @@ This library provides different switching states of View, included by default ar
 		implementation fileTree(dir: 'libs', include: ['*.har'])
 		testImplementation 'junit:junit:4.13'
 	}
+```
+3. For using multistateview from a remote repository in separate application, add the below dependencies in entry/build.gradle file.
+``` groovy
+    dependencies {
+    implementation ('dev.applibgroup:multistateview:1.0.0')
+    testCompile 'junit:junit:4.13'
+}
 ```
 
 ## Usage
